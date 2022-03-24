@@ -39,4 +39,4 @@ While using a file based secret management can work if done correctly, most orga
 
 ## What's next?
 
-[Getting started with Vault](/secrets/vault)
+[Getting started with Vault]({{ site.baseurl }}{% link secrets/vault.md %})
