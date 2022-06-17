@@ -29,7 +29,6 @@ jobs:
       - uses: anishathalye/proof-html@v1
         with:
           directory: ./_site
-          args: --allow-missing-href
           enforce_https: true
           check_favicon: false
           tokens: |
@@ -39,3 +38,4 @@ jobs:
             https://en.wikipedia.org/wiki/Main_Page
           url_ignore_re: |
             ^https://twitter.com/
+            ^_site/devsecops/
