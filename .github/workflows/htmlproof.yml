@@ -38,4 +38,4 @@ jobs:
             https://en.wikipedia.org/wiki/Main_Page
           url_ignore_re: |
             ^https://twitter.com/
-            ^_site/devsecops/
+            _site/devsecops/
