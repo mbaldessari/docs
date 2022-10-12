@@ -1,3 +1,9 @@
 _site
 .jekyll-cache
 *~
+*swp
+*swo
+dictionary.dic
+super-linter.log
+tmp/
+Gemfile.lock
