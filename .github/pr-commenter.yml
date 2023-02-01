@@ -5,13 +5,12 @@ comment:
 
   footer: |
     ---
-    Automated comment created by [PR Commenter](https://github.com/exercism/pr-commenter-action) :robot:.
 
   snippets:
     - id: any-markdown-file-changed
       files:
-        - any: ['**/*']
+        - any: ['**/*md']
         - any: ['**/**']
       body: |
-        It looks like you're changing a Markdown file.
-        Make sure your changes follow our [language guidelines](some-link) when writing documentation.
+        You can see a preview of the rendered change here (might have to wait up to 5 mins):
+        https://docs-pr.acksyn.org/pr/{{ id }}
