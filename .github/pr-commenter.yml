@@ -1,0 +1,16 @@
+comment:
+  on-update: nothing
+  header: |
+    Thank you for contributing to this repository :tada:.
+
+  footer: |
+    ---
+
+  snippets:
+    - id: any-markdown-file-changed
+      files:
+        - any: ['**/*md']
+        - any: ['**/**']
+      body: |
+        You can see a preview of the rendered change here (might have to wait up to 5 mins):
+        https://docs-pr.acksyn.org/pr/{{ id }}
