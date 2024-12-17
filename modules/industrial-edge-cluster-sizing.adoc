@@ -1,0 +1,17 @@
+** Compute **
+
+  * *gcp* - 5 - n1-standard-16
+
+  * *azure* - 5 - Standard_D16s_v5
+
+  * *aws* - 3 - m5.4xlarge
+
+
+** Control Plane **
+
+  * *gcp* - 3 - n1-standard-16
+
+  * *azure* - 3 - Standard_D16s_v3
+
+  * *aws* - 3 - m5.4xlarge
+
