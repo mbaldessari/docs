@@ -1,0 +1,9 @@
+** Compute **
+<% requirements['compute']['platform'].each do |key, value| %>
+  * *<%= key %>* - <%= requirements['compute']['platform'][key]['replicas'] %> - <%= requirements['compute']['platform'][key]['type'] %>
+<% end %>
+
+** Control Plane **
+<% requirements['controlPlane']['platform'].each do |key, value| %>
+  * *<%= key %>* - <%= requirements['controlPlane']['platform'][key]['replicas'] %> - <%= requirements['controlPlane']['platform'][key]['type'] %>
+<% end %>
