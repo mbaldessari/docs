@@ -15,19 +15,16 @@ the x86_64 architecture.
 .Hub cluster minimum requirements
 [cols="<,^,<,<"]
 |===
-| Node Type | Number of nodes | Cloud Provider | Instance Type
-
-<% hub['controlPlane']['platform'].each do |key, value| %>
+| Cloud Provider | Node Type | Number of nodes | Instance Type
+<% ['aws', 'gcp', 'azure'].each do |c| %>
+| <%= clouds[c] %>
 | Control Plane
-| <%= hub['controlPlane']['platform'][key]['replicas'] %>
-| <%= clouds[key] %>
-| <%= hub['controlPlane']['platform'][key]['type'] %>
-<% end %>
-<% hub['compute']['platform'].each do |key, value| %>
+| <%= hub['controlPlane']['platform'][c]['replicas'] %>
+| <%= hub['controlPlane']['platform'][c]['type'] %>
+| <%= clouds[c] %>
 | Worker
-| <%= hub['compute']['platform'][key]['replicas'] %>
-| <%= clouds[key] %>
-| <%= hub['compute']['platform'][key]['type'] %>
+| <%= hub['compute']['platform'][c]['replicas'] %>
+| <%= hub['compute']['platform'][c]['type'] %>
 <% end %>
 |===
 
@@ -35,18 +32,16 @@ the x86_64 architecture.
 .Spoke cluster minimum requirements
 [cols="<,^,<,<"]
 |===
-| Node Type | Number of nodes | Cloud Provider | Instance Type
-<% spoke['controlPlane']['platform'].each do |key, value| %>
+| Cloud Provider | Node Type | Number of nodes | Instance Type
+<% ['aws', 'gcp', 'azure'].each do |c| %>
+| <%= clouds[c] %>
 | Control Plane
-| <%= spoke['controlPlane']['platform'][key]['replicas'] %>
-| <%= clouds[key] %>
-| <%= spoke['controlPlane']['platform'][key]['type'] %>
-<% end %>
-<% spoke['compute']['platform'].each do |key, value| %>
+| <%= spoke['controlPlane']['platform'][c]['replicas'] %>
+| <%= spoke['controlPlane']['platform'][c]['type'] %>
+| <%= clouds[c] %>
 | Worker
-| <%= spoke['compute']['platform'][key]['replicas'] %>
-| <%= clouds[key] %>
-| <%= spoke['compute']['platform'][key]['type'] %>
+| <%= spoke['compute']['platform'][c]['replicas'] %>
+| <%= spoke['compute']['platform'][c]['type'] %>
 <% end %>
 <% end %>
 |===
