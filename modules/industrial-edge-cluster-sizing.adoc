@@ -1,0 +1,83 @@
+
+
+
+:_content-type: CONCEPT
+:imagesdir: ../../images
+
+[id="industrial-edge-openshift-hub-cluster-size"]
+= Industrial Edge pattern hub cluster size minimum requirements
+
+The Industrial Edge pattern has been tested with a defined set of
+specifically tested configurations that represent the most common combinations
+that Red Hat OpenShift Container Platform customers are using or deploying for
+the x86_64 architecture.
+
+.Hub cluster minimum requirements
+[cols="<,^,<,<"]
+|===
+| Cloud Provider | Node Type | Number of nodes | Instance Type
+
+| Amazon Web Services
+| Control Plane
+| 3
+| m5.4xlarge
+| Amazon Web Services
+| Worker
+| 3
+| m5.4xlarge
+
+| Google Cloud Platform
+| Control Plane
+| 3
+| n1-standard-16
+| Google Cloud Platform
+| Worker
+| 5
+| n1-standard-16
+
+| Microsoft Azure
+| Control Plane
+| 3
+| Standard_D16s_v3
+| Microsoft Azure
+| Worker
+| 5
+| Standard_D16s_v5
+
+|===
+
+
+.Spoke cluster minimum requirements
+[cols="<,^,<,<"]
+|===
+| Cloud Provider | Node Type | Number of nodes | Instance Type
+
+| Amazon Web Services
+| Control Plane
+| 3
+| m5.2xlarge
+| Amazon Web Services
+| Worker
+| 3
+| m5.2xlarge
+
+| Google Cloud Platform
+| Control Plane
+| 3
+| n1-standard-16
+| Google Cloud Platform
+| Worker
+| 3
+| n1-standard-16
+
+| Microsoft Azure
+| Control Plane
+| 3
+| Standard_D16s_v5
+| Microsoft Azure
+| Worker
+| 3
+| Standard_D16s_v5
+
+
+|===

@@ -1,0 +1,12 @@
+---
+title: Cluster Sizing
+weight: 50
+aliases: /industrial-edge/cluster-sizing/
+---
+
+:toc:
+:imagesdir: /images
+:_content-type: ASSEMBLY
+include::modules/comm-attributes.adoc[]
+
+include::modules/industrial-edge-cluster-sizing.adoc[leveloffset=+1]
