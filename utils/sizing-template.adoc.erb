@@ -1,9 +1,52 @@
-** Compute **
-<% requirements['compute']['platform'].each do |key, value| %>
-  * *<%= key %>* - <%= requirements['compute']['platform'][key]['replicas'] %> - <%= requirements['compute']['platform'][key]['type'] %>
-<% end %>
+<% hub = metadata['requirements']['hub'] %>
+<% spoke = metadata['requirements']['spoke'] %>
+<% clouds = { "aws" => "Amazon Web Services", "gcp" => "Google Cloud Platform", "azure" => "Microsoft Azure" } %>
+:_content-type: CONCEPT
+:imagesdir: ../../images
 
-** Control Plane **
-<% requirements['controlPlane']['platform'].each do |key, value| %>
-  * *<%= key %>* - <%= requirements['controlPlane']['platform'][key]['replicas'] %> - <%= requirements['controlPlane']['platform'][key]['type'] %>
+[id="<%= metadata['pattern'] %>-openshift-hub-cluster-size"]
+= <%= metadata['display_name'] %> pattern hub cluster size minimum requirements
+
+The <%= metadata['display_name'] %> pattern has been tested with a defined set of
+specifically tested configurations that represent the most common combinations
+that Red Hat OpenShift Container Platform customers are using or deploying for
+the x86_64 architecture.
+
+.Hub cluster minimum requirements
+[cols="<,^,<,<"]
+|===
+| Node Type | Number of nodes | Cloud Provider | Instance Type
+
+<% hub['controlPlane']['platform'].each do |key, value| %>
+| Control Plane
+| <%= hub['controlPlane']['platform'][key]['replicas'] %>
+| <%= clouds[key] %>
+| <%= hub['controlPlane']['platform'][key]['type'] %>
 <% end %>
+<% hub['compute']['platform'].each do |key, value| %>
+| Worker
+| <%= hub['compute']['platform'][key]['replicas'] %>
+| <%= clouds[key] %>
+| <%= hub['compute']['platform'][key]['type'] %>
+<% end %>
+|===
+
+<% if !spoke.nil? and !spoke.empty? %>
+.Spoke cluster minimum requirements
+[cols="<,^,<,<"]
+|===
+| Node Type | Number of nodes | Cloud Provider | Instance Type
+<% spoke['controlPlane']['platform'].each do |key, value| %>
+| Control Plane
+| <%= spoke['controlPlane']['platform'][key]['replicas'] %>
+| <%= clouds[key] %>
+| <%= spoke['controlPlane']['platform'][key]['type'] %>
+<% end %>
+<% spoke['compute']['platform'].each do |key, value| %>
+| Worker
+| <%= spoke['compute']['platform'][key]['replicas'] %>
+| <%= clouds[key] %>
+| <%= spoke['compute']['platform'][key]['type'] %>
+<% end %>
+<% end %>
+|===

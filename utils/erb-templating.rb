@@ -26,7 +26,6 @@ rescue => e
   exit(1)
 end
 
-requirements = metadata['requirements']
 renderer = ERB.new(template)
 output = renderer.result(binding)
 puts output
