@@ -1,6 +1,11 @@
 require 'erb'
 require 'yaml'
 
+if ARGV.length != 2
+  puts "Please run: #{$0} <metadata-file.yaml> <erb-template>"
+  exit(1)
+end
+
 begin
   metadata = YAML.load_file(ARGV[0])
 rescue Errno::ENOENT
