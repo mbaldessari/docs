@@ -5,7 +5,7 @@
 :imagesdir: ../../images
 
 [id="industrial-edge-openshift-hub-cluster-size"]
-= Industrial Edge pattern hub cluster size minimum requirements
+= Industrial Edge hub cluster size minimum requirements
 
 The Industrial Edge pattern has been tested with a defined set of
 specifically tested configurations that represent the most common combinations
@@ -47,6 +47,11 @@ the x86_64 architecture.
 |===
 
 
+{zwsp} +
+{zwsp} +
+
+[id="industrial-edge-openshift-spoke-cluster-size"]
+== Industrial Edge spoke cluster size minimum requirements
 .Spoke cluster minimum requirements
 [cols="<,^,<,<"]
 |===
@@ -79,5 +84,5 @@ the x86_64 architecture.
 | 3
 | Standard_D16s_v5
 
-
 |===
+

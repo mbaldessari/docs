@@ -5,7 +5,7 @@
 :imagesdir: ../../images
 
 [id="<%= metadata['pattern'] %>-openshift-hub-cluster-size"]
-= <%= metadata['display_name'] %> pattern hub cluster size minimum requirements
+= <%= metadata['display_name'] %> hub cluster size minimum requirements
 
 The <%= metadata['display_name'] %> pattern has been tested with a defined set of
 specifically tested configurations that represent the most common combinations
@@ -29,6 +29,11 @@ the x86_64 architecture.
 |===
 
 <% if !spoke.nil? and !spoke.empty? %>
+{zwsp} +
+{zwsp} +
+
+[id="<%= metadata['pattern'] %>-openshift-spoke-cluster-size"]
+= <%= metadata['display_name'] %> spoke cluster size minimum requirements
 .Spoke cluster minimum requirements
 [cols="<,^,<,<"]
 |===
@@ -43,5 +48,5 @@ the x86_64 architecture.
 | <%= spoke['compute']['platform'][c]['replicas'] %>
 | <%= spoke['compute']['platform'][c]['type'] %>
 <% end %>
-<% end %>
 |===
+<% end %>
