@@ -51,7 +51,7 @@ the x86_64 architecture.
 {zwsp} +
 
 [id="industrial-edge-openshift-spoke-cluster-size"]
-== Industrial Edge spoke cluster size minimum requirements
+= Industrial Edge spoke cluster size minimum requirements
 .Spoke cluster minimum requirements
 [cols="<,^,<,<"]
 |===
