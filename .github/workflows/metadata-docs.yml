@@ -23,6 +23,11 @@ on:
         required: false
         type: string
         default: "main"
+      DOCS_TOKEN:
+        description: "Secret token for docs repo authentication"
+        required: false
+        type: string
+        default: ""
 
 env:
   DOCS_DIR: docs
@@ -74,7 +79,7 @@ jobs:
           path: ${{ env.DOCS_DIR }}
           repository: ${{ env.DOCS_REPO }}
           ref: ${{ inputs.DOCS_BRANCH }}
-          token: ${{ secrets.DOCS_TOKEN }}
+          token: ${{ inputs.DOCS_TOKEN }}
 
       - name: Template the cluster variables
         run: |-
@@ -98,4 +103,4 @@ jobs:
           gh pr edit -B "${{ inputs.DOCS_BRANCH }}" --title 'Cluster variables change for ${{ env.PATTERN }}' --body 'Created by Github action'
         working-directory: ${{ env.DOCS_DIR }}
         env:
-          GITHUB_TOKEN: ${{ secrets.DOCS_TOKEN }}
+          GITHUB_TOKEN: ${{ inputs.DOCS_TOKEN }}
