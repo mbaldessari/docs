@@ -36,6 +36,7 @@ jobs:
     if: |
       github.repository_owner == 'validatedpatterns' ||
       github.repository_owner == 'validatedpatterns-sandbox' ||
+      github.repository_owner == 'mbaldessari' ||  # FIXME: remove this in the end
       github.repository_owner == 'validatedpatterns-demos'
     runs-on: ubuntu-latest
     permissions:
