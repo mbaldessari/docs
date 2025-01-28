@@ -21,6 +21,7 @@ on:
       DOCS_BRANCH:
         description: "Branch of the docs git repo to use"
         required: false
+        type: string
         default: "main"
 
 env:
